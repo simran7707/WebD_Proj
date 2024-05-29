@@ -1,0 +1,32 @@
+[
+    {
+       "name":"diwali",
+       "menu":"morning:Almond Milk Thandai,chole-bhature;lunch:gulabjamun,Paneer Shashlik; everning: Dal Makhani,Palak Mirch Kadhi,Kaju-Katli ",
+       "itemasked":"Rava Kheer"
+ 
+    },
+    {
+       "name":"holi",
+       "menu":"morning:Thandai,Dahi-Bhalle;lunch:Puran-Poli,Shakar Para; everning: dish Dhuska ,Kulcha Naan,Bagara Bhaat ",
+       "itemasked":"Gujia"
+ 
+    },
+    {
+       "name":"eid",
+       "menu":"kheer,kabab,meat",
+       "itemasked":"red meat"
+ 
+    },
+    {
+       "name":"ganesh-chaturthi",
+       "menu":"ladoo,sev-puri",
+       "itemasked":"Modak"
+ 
+    },
+    {
+       "name":"Navratri",
+       "menu":"kheer,kadhi,Bagara Bhaat, Special Thali",
+       "itemasked":"Kada Prasad"
+ 
+    }
+ ]
