@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.icon">
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name ="viewport" content ="width=device-width, initial -scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ms Madi' rel='stylesheet'>  
+    <link href='https://fonts.googleapis.com/css?family=Tiro Bangla' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="http://cdn.webrupee.com/font">
+    <title>Restaurant</title>
+    <link href="style2.css" rel="stylesheet"type="text/css">
+</head>
+<body>
+     <!--menu section starts --> 
+     <div class="main11" id="menu">
+    
+        <div class="main111">
+         <h1> OUR SPECIAL  MENU</h1>
+        
+        </div>
+        <div class="main22">
+            <h2> Chef Manish Mehrotra has designed Indian Accent’s path-breaking contemporary Indian menu combining fresh seasonal produce and unusual ingredients from across the world to excite the adventurous, yet satisfy traditional tastes and evoke nostalgia.
+            </h2>
+        
+        </div>
+        
+        <div class="main3">
+            <div class="pictures">
+            <img  class="pic0" src="food5.jpg.png" > 
+            </div>
+            <img  class="pic0" src="food6.jpg.png" >
+            <img  class="pic0" src="food7.jpg.png" >
+            <img  class="pic0" src="food8.jpg.png" >
+        </div>
+        <div class="main4">
+        
+        <span style="font-size:120%;color:green;">&bigstar;</span>
+        <span style="font-size:120%;color:green;">&bigstar;</span>
+        <span style="font-size:120%;color:green;">&bigstar;</span>
+        <span style="font-size:120%;color:green;">&star;</span>
+        <h3 class="f1"> FRIED CHICKENS</h3>
+        <button class="btnm"> <b>Rs 3000</b></button>
+        
+        </div>
+        <div class="main5">
+        
+            <span style="font-size:120%;color:green;">&bigstar;</span>
+            <span style="font-size:120%;color:green;">&bigstar;</span>
+            <span style="font-size:120%;color:green;">&bigstar;</span>
+            <span style="font-size:120%;color:green;">&star;</span>
+            <h3 class="f1"> SPICY KABAB</h3>
+            <button class="btnm"> <b>Rs 2500</b></button>
+            </div>
+            <div class="main6">
+        
+                <span style="font-size:120%;color:green;">&bigstar;</span>
+                <span style="font-size:120%;color:green;">&bigstar;</span>
+                <span style="font-size:120%;color:green;">&bigstar;</span>
+                <span style="font-size:120%;color:green;">&star;</span>
+                <h3 class="f1"> CHICKEN SALAD</h3>
+                <button class="btnm"> <b>Rs 3200</b> </button>
+                </div>
+                <div class="main7">
+        
+                    <span style="font-size:120%;color:green;">&bigstar;</span>
+                    <span style="font-size:120%;color:green;">&bigstar;</span>
+                    <span style="font-size:120%;color:green;">&bigstar;</span>
+                    <span style="font-size:120%;color:green;">&star;</span>
+                    <h3 class="f1"> SPICY ROLL</h3>
+                    <button class="btnm"><b>Rs 3300</b></button>
+                    </div>
+        
+        
+            </div>
+
+
+            <div id="weath1">
+                <p>  Get to know more about Occasional Dishes</p>
+       <label for = "ab">Enter name of the festival : </label><br>
+     <input id = "ab" type = "text" placeholder = "Enter your FESTIVAL"><br>
+     <label for = "meal">palak  : </label><br>
+     <input id = "meal" type = "text" placeholder = "MEAL type you want to know"><br>
+     <input  id = "bn" type = submit value = "Search">  
+   
+    <div id="weath2">
+        <label for = "ab">Menu: </label><br>
+        <input id = "ideal" type = "text" placeholder = "Total Menu"><br>
+        <label for = "ab">special dessert: </label><br>
+        <input id = "temp" type = "text" placeholder = "Most Selled"><br>
+        <label for = "ab">Festival Name: </label><br>
+        <input type = "text" id = "ses">
+  </div>
+</div>
+
+<script>
+  fetch("one.json")
+    .then((response)=>response.json())
+    .then((json)=>{
+        let btn= document.getElementById('bn');
+        let states= document.getElementById('ab');
+        let season= document.getElementById('meal');
+        let a =season.value;
+        let temp=document.getElementById('temp');
+        let b= document.getElementById('ideal');
+        let textarea= document.getElementById('ses');
+        btn.addEventListener('click' , function(){
+          //console.log("hello")
+          json.forEach(element => {
+            if(states.value==element.name)
+            {
+                temp.value=element.itemasked;
+                b.value=element.menu;
+                textarea.value=season.value;
+
+
+            }
+          })
+        })
+    })
+</script>
+</body>
+</html>

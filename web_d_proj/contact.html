@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.icon">
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name ="viewport" content ="width=device-width, initial -scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ms Madi' rel='stylesheet'>  
+    <link href='https://fonts.googleapis.com/css?family=Tiro Bangla' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="http://cdn.webrupee.com/font">
+    <title>Restaurant</title>
+    <link href="style2.css" rel="stylesheet"type="text/css">
+</head>
+<body>
+             <!--contact section starts  -->
+
+
+                      
+<div class="contactme" id="contactus">
+    <div>
+    <h1 class="c1">Contact Us</h1>
+  </div>
+
+
+<section class="cont" id="cont">
+
+    <form method="post" id="frmCont">
+        
+
+
+        <p class="inputBox1">
+            <h9 class="c3">Name</h9>
+            <input type="text" name="a" id="a"  placeholder="Name"required />
+       </p>
+
+      
+
+
+        <p class="inputBox1">
+            <h9 class="c3">Email-Address</h9>
+            <input type="text" name="b" id="b"  placeholder="Email-address"required />
+       </p>
+
+       
+        
+            <p class="inputBox1">
+                <h9 class="c3">Event location</h9>
+                <input type="text" name="c" id="c"  placeholder="location"/>
+           </p>
+     
+  
+
+        <p class="inputBox1">
+            <h9 class="c3">Date</h9>
+            <input type="text" name="d" id="d"  placeholder="Date"/>
+       </p>
+
+    
+
+         <p class="inputBox1">
+            <h9 class="c3">Phone-No</h9>
+            <input type="text" name="e" id="e"  placeholder="Phone-no"/>
+       </p>
+
+
+     
+
+        <p class="inputBox1">
+            <h9 class="c3">Message for Us</h9>
+            <input type="text" name="f" id="f"  placeholder="Name" />
+       </p>
+
+         <button type="submit" name="sub" class="btn00">Send Message</button>
+        
+    </form>
+</section> 
+
+                       
+                            
+                            
+                           
+                    
+                <!-- contact section ends  -->
+
+                <script type="module">
+                    // Import the functions you need from the SDKs you need
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+                    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+                    
+                    // Paste the code from Firebase
+                    const firebaseConfig2 = {
+                    
+                    apiKey: "AIzaSyDOBsCPUHMPOMIZ68af7t2MDcb5DtR4pwo",
+                    authDomain: "restaurant3-869c5.firebaseapp.com",
+                    databaseURL: "https://restaurant3-869c5-default-rtdb.firebaseio.com",
+                    projectId: "restaurant3-869c5",
+                    storageBucket: "restaurant3-869c5.appspot.com",
+                    messagingSenderId: "734550891195",
+                    appId: "1:734550891195:web:971b03a6b69e1e5831279e"
+                    };
+                    
+                    // Initialize Firebase
+                    const app2 = initializeApp(firebaseConfig2);
+                    
+                    // Get a reference to the database service
+                    const db1 = getDatabase(app2);
+                    
+                    document.getElementById('frmCont').addEventListener('submit', function(k) {
+                    k.preventDefault();
+                    set(ref(db1, 'users/' + Math.random().toString(36).slice(2, 7)), {
+                    fullname: document.getElementById('a').value,
+                    emailid: document.getElementById('b').value,
+                    event_location: document.getElementById('c').value,
+                    event_date: document.getElementById('d').value,
+                    phone_no: document.getElementById('e').value,
+                    message_for_us: document.getElementById('f').value,
+                    
+                    });
+                    
+                    alert('Your form is submitted');
+                    document.getElementById('frmCont').reset();
+                    });
+                    </script>
+
+
+
+
+</body>
+</html>
